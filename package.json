@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-socket.io-emitter",     "homepage": "https://github.com/npmtest/node-npmtest-socket.io-emitter",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-socket.io-emitter.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [socket.io-emitter (v2.0.0)](https://github.com/socketio/socket.io-emitter#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-socket.io-emitter.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-socket.io-emitter) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-socket.io-emitter.svg)](https://travis-ci.org/npmtest/node-npmtest-socket.io-emitter)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-socket.io-emitter",
+    "keywords": [
+        "coverage",
+        "test",
+        "socket.io-emitter"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_socket.io_emitter.js",
+    "name": "npmtest-socket.io-emitter",
+    "nameAlias": "npmtest_socket_io_emitter",
+    "nameOriginal": "npmtest-socket.io-emitter",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-socket.io-emitter.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
